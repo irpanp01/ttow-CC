@@ -5,7 +5,7 @@
     $output = array();
     $query="SELECT * FROM detail_wayang";
     $result = $conn->prepare($query);
-    while($obj = mysqli_fetch_object($result)){
+    while($obj = $result){
         $output[] = $obj;
     }
     header('Content-Type: JSON');
