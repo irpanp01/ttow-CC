@@ -1,5 +1,5 @@
 <?php 
-	class DbConnect {
+	class auth {
 		private $host;
 		private $dbName;
 		private $user;
