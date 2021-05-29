@@ -6,8 +6,12 @@
     $query="SELECT * FROM detail_wayang";
     $statement = $conn->prepare($query);
     $statement->execute();
+    $output = array();
     
-    $result = $statement->get_result();
+    while($obj = $statement->fetch_array(MYSQLI_ASSOC)) {
+        $output[] = $obj;
+    }
 
-    echo json_encode(($result->fetch_assoc()));
+    mysqli_close($statement);
+    echo json_encode($output, JSON_PRETTY_PRINT);
 ?>
