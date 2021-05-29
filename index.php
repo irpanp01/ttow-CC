@@ -17,7 +17,7 @@
     } else {
         echo 'Error: No result.';
     }
-    
+    header("Conten Type : JSON");
     echo json_encode($result, JSON_PRETTY_PRINT);
     // include 'auth.php'
     // $output = array();
