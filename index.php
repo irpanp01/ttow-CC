@@ -19,7 +19,7 @@
     }
     
     header('Content-type: JSON');
-    echo json_encode($output, JSON_PRETTY_PRINT);
+    json_encode($output, JSON_PRETTY_PRINT);
     // include 'auth.php'
     // $output = array();
 
