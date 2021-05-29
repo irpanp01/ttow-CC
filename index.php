@@ -11,14 +11,14 @@
 
     if($result){
         $output = array();
-        foreach($result as $obj) {
+        while($result = $obj) {
             $output[]=$obj;
         }
     } else {
         echo 'Error: No result.';
     }
     header("Conten Type : JSON");
-    echo json_encode($result, JSON_PRETTY_PRINT);
+    echo json_encode($output, JSON_PRETTY_PRINT);
     // include 'auth.php'
     // $output = array();
 
