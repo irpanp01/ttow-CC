@@ -18,7 +18,7 @@
         echo 'Error: No result.';
     }
     
-    echo json_encode($output, JSON_PRETTY_PRINT);
+    echo json_encode($result, JSON_PRETTY_PRINT);
     // include 'auth.php'
     // $output = array();
 
