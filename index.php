@@ -12,7 +12,7 @@
     if($result){
         $output = array();
         foreach($result as $obj) {
-            $output[]=$obj  ;
+            echo $obj[];
         }
     } else {
         echo 'Error: No result.';
