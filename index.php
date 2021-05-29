@@ -7,9 +7,15 @@
     $query="SELECT * FROM detail_wayang";
     $statement = $conn->prepare($query);
     $statement->execute();
-    while($obj = $statement->fetch(PDO::FETCH_ASSOC) {
-        $output[] = $obj;
+    $result = $getResult->fetchAll();
+    if($result){
+        foreach($result as $obj) {
+            $output[] = $obj;
+        }
+    } else {
+        echo 'Error: No result.';
     }
+    
     header('Content-type: JSON');
     echo json_encode($output, JSON_PRETTY_PRINT);
     // include 'auth.php'
