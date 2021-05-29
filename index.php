@@ -7,18 +7,19 @@
     $statement = $conn->prepare($query);
     $statement->execute();
     $result = $statement->fetchAll();
-    print_r($result);
-    // if($result){
-    //     $output = array();
-    //     foreach($result as $obj) {
-    //         echo $obj[nm_wayang];
-    //     }
-    // } else {
-    //     echo 'Error: No result.';
-    // }
+    // print_r($result);
+
+    if($result){
+        $output = array();
+        foreach($result as $obj) {
+            $output[]=$obj;
+        }
+    } else {
+        echo 'Error: No result.';
+    }
     
-    // header('Content-type: JSON');
-    // echo json_encode($output, JSON_PRETTY_PRINT);
+    header('Content-type: JSON');
+    echo json_encode($output, JSON_PRETTY_PRINT);
     // include 'auth.php'
     // $output = array();
 
