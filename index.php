@@ -11,8 +11,8 @@
 
     if($result){
         $output = array();
-        while($result = $obj) {
-            $output[]=$obj;
+        foreach($result as $obj) {
+            $output[$obj];
         }
     } else {
         echo 'Error: No result.';
