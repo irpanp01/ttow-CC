@@ -6,20 +6,20 @@
     $query="SELECT * FROM detail_wayang";
     $statement = $conn->prepare($query);
     $statement->execute();
-    $result = $statement->fetchAll();
-    // print_r($result);
-    $output = array();
+    $result = $statement->fetch(PDO::FETCH_ASSOC);
+    print_r($result);
+    // $output = array();
 
-    if($result){
-        foreach($result as $obj) {
-            $output["result"] = $obj;
-        }
-    } else {
-        echo 'Error: No result.';
-    }
+    // if($result){
+    //     foreach($result as $obj) {
+    //         $output[] = $obj;
+    //     }
+    // } else {
+    //     echo 'Error: No result.';
+    // }
     
-    header('Content-type: JSON');
-    echo json_encode($output, JSON_PRETTY_PRINT);
+    // header('Content-type: JSON');
+    // echo json_encode($output, JSON_PRETTY_PRINT);
     // include 'auth.php'
     // $output = array();
 
