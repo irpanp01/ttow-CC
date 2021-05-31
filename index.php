@@ -8,11 +8,11 @@
     $statement->execute();
     $result = $statement->fetchAll();
     // print_r($result);
+    $output = array();
 
     if($result){
-        $output = array();
         foreach($result as $obj) {
-            echo $obj[]++;
+            $output["result"] = $obj;
         }
     } else {
         echo 'Error: No result.';
