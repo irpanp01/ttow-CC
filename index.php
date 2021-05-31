@@ -6,7 +6,7 @@
     $query="SELECT * FROM detail_wayang";
     $statement = $conn->prepare($query);
     $statement->execute();
-    $result = $statement->fetch(PDO::FETCH_ASSOC);
+    $result = $statement->fetchAll(PDO::FETCH_ASSOC);
     print_r($result);
     // $output = array();
 
