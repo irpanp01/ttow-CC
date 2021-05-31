@@ -14,7 +14,7 @@
     if(!empty($output)){
         header("Access-Control-Allow-Origin: *");
         header('Content-Type: application/json');
-        print json_encode($output);
+        print json_encode($output,JSON_PRETTY_PRINT);
     }else{
         echo 'error';
     }
