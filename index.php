@@ -5,10 +5,22 @@
     
     $query="SELECT * FROM detail_wayang";
     $statement = $conn->prepare($query);
-    $statement->execute();
-    $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-    print_r($result);
-    // $output = array();
+    $output = array();
+    if($statement->execute()){
+        while($row = $statement->fetchAll(PDO::FETCH_ASSOC)) {
+            $output['result'] = $row;
+        }
+    }
+    if(!empty($output)){
+        header("Access-Control-Allow-Origin: *");
+        header('Content-Type: application/json');
+        print json_encode($output);
+    }else{
+        echo 'error';
+    }
+    // $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+    // print_r($result);
+    
 
     // if($result){
     //     foreach($result as $obj) {
