@@ -9,9 +9,8 @@
     
     $query="SELECT * FROM detail_wayang WHERE id=:getid";
     $statement = $conn->prepare($query);
-    $statement->bindParam(":getid",$getid);
     $output = array();
-    if($statement->execute()){
+    if($statement->execute(['getid' => $getid])){
         while($row = $statement->fetchAll(PDO::FETCH_ASSOC)) {
             $output['result'] = $row;
         }
