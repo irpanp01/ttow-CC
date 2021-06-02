@@ -34,7 +34,7 @@
         case '/bagong.php':
             require 'bagong.php';
             break;
-        case '/getwayang.php?id=':
+        case '/getwayang.php':
             require 'getwayang.php';
             break;
     }

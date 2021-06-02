@@ -6,7 +6,7 @@
     // $result = mysqli_query($conn, $query);
     $db = new auth();
     $conn = $db->connect();
-    $query="SELECT * FROM detail_wayang WHERE id=$getid";
+    $query="SELECT * FROM detail_wayang WHERE id='1'";
     $statement = $conn->prepare($query);
     //$statement->bindParam(":getid",$getid);
     $output = array();
