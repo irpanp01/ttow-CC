@@ -37,5 +37,8 @@
         case '/getwayang.php':
             require 'getwayang.php';
             break;
+        case '/getcerita.php':
+            require 'getcerita.php';
+            break;
     }
 ?>
