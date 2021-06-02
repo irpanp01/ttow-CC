@@ -1,17 +1,17 @@
 <?php
     include 'auth.php';
-    $getid = $_GET['getid'];
+    $id = $_GET['id'];
 
     // $query="DELETE FROM detail_wayang WHERE id='$id'";
     // $result = mysqli_query($conn, $query);
     $db = new auth();
     $conn = $db->connect();
     
-    $query="SELECT * FROM detail_wayang WHERE id=:getid";
+    $query="SELECT * FROM detail_wayang WHERE id=:id";
     $statement = $conn->prepare($query);
     //$statement->bindParam(":getid",$getid);
     $output = array();
-    if($statement->execute(['getid' => $getid])){
+    if($statement->execute(['id' => $id])){
         while($row = $statement->fetchAll(PDO::FETCH_ASSOC)) {
             $output['result'] = $row;
         }
