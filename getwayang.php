@@ -6,11 +6,11 @@
     // $result = mysqli_query($conn, $query);
     $db = new auth();
     $conn = $db->connect();
-    $query="SELECT * FROM detail_wayang WHERE id='1'";
+    $query="SELECT * FROM detail_wayang WHERE id_wayang=:id";
     $statement = $conn->prepare($query);
     //$statement->bindParam(":getid",$getid);
     $output = array();
-    if($statement->execute()){
+    if($statement->execute(['id' => $getid])){
         while($row = $statement->fetchAll(PDO::FETCH_ASSOC)) {
             $output['result'] = $row;
         }
