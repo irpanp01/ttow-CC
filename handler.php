@@ -13,17 +13,11 @@
         case '/semar':
             require 'semar.php';
             break;
-        case '/search/getsemar':
-            require __DIR__.'/search/getsemar.php';
-            break;   
         case '/semar.php':
             require 'semar.php';
             break; 
         case '/gareng':
             require 'gareng.php';
-            break;
-        case '/search/getgareng':
-            require __DIR__.'/search/getgareng.php';
             break;
         case '/gareng.php':
             require 'gareng.php';
@@ -31,20 +25,17 @@
         case '/petruk':
             require 'petruk.php';
             break;
-        case '/search/getpetruk':
-            require __DIR__.'/search/getpetruk.php';
-            break;
         case '/petruk.php':
             require 'petruk.php';
             break;
         case '/bagong':
             require 'bagong.php';
             break;
-        case '/search/getbagong':
-            require __DIR__.'/search/getbagong.php';
-            break;
         case '/bagong.php':
             require 'bagong.php';
+            break;
+        case '/getwayang.php':
+            require 'getwayang.php';
             break;
     }
 ?>

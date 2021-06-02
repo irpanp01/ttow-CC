@@ -7,7 +7,7 @@
     $db = new auth();
     $conn = $db->connect();
     
-    $query="SELECT * FROM cerita_wayang WHERE id=:getid";
+    $query="SELECT * FROM detail_wayang WHERE id=:getid";
     $statement = $conn->prepare($query);
     $statement->bindParam(":getid",$getid);
     $output = array();
