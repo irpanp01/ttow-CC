@@ -1,6 +1,6 @@
 <?php
     include 'auth.php';
-    $getid = $_GET['id'];
+    $getid = $_GET['getid'];
 
     // $query="DELETE FROM detail_wayang WHERE id='$id'";
     // $result = mysqli_query($conn, $query);
@@ -9,6 +9,7 @@
     
     $query="SELECT * FROM detail_wayang WHERE id=:getid";
     $statement = $conn->prepare($query);
+    //$statement->bindParam(":getid",$getid);
     $output = array();
     if($statement->execute(['getid' => $getid])){
         while($row = $statement->fetchAll(PDO::FETCH_ASSOC)) {
